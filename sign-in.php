@@ -1,6 +1,6 @@
 <html>  
 <head>  
-    <title>PHP login system</title> 
+    <title>Sign-in page</title> 
     <link rel = "stylesheet" type = "text/css" href = "style.css">   
 </head>  
 <body>  
@@ -16,7 +16,7 @@
                 <input type = "password" id ="pass" name  = "pass" />  
             </p>  
             <p>     
-                <input type =  "submit" id = "btn" value = "Login" />  
+                <input type =  "submit" id = "sign_in_btn" name="sign_in_btn" value = "Sign In" />  
             </p>  
         </form>  
     </div>  
@@ -26,7 +26,7 @@
                 var id=document.f1.user.value;  
                 var ps=document.f1.pass.value;  
                 if(id.length=="" && ps.length=="") {  
-                    alert("User Name and Password fields are empty");  
+                    alert("Fields cannot be empty");  
                     return false;  
                 }  
                 else  
