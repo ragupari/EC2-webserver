@@ -1,11 +1,18 @@
 <html>  
 <head>  
     <title>Sign-up page</title> 
-    <link rel = "stylesheet" type = "text/css" href = "style.css">   
+    <link rel = "stylesheet" type = "text/css" href = "../public/style.css">   
 </head>  
 <body>  
     <div id = "frm">  
         <h1>Sign Up</h1>  
+        <?php 
+            session_start();
+            if (!empty($_SESSION['fail_msg'])) {
+                echo '<p class="validation-message">' . $_SESSION['fail_msg'] . '</p>';
+            }
+            session_destroy();
+        ?>
         <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
                 <label> First Name: </label>  

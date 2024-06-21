@@ -1,12 +1,21 @@
 <html>  
 <head>  
     <title>Sign-in page</title> 
-    <link rel = "stylesheet" type = "text/css" href = "style.css">   
+    <link rel = "stylesheet" type = "text/css" href = "/Public/style.css">   
 </head>  
 <body>  
     <div id = "frm">  
-        <h1>Login</h1>  
-        <form name="f1" action = "authentication.php" onsubmit = "return validation()" method = "POST">  
+        <h1>Sign In</h1>
+         
+        <?php 
+            
+            if (!empty($_SESSION['fail_msg'])) {
+                echo '<p class="validation-message">' . $_SESSION['fail_msg'] . '</p>';
+            }
+       
+        ?>
+        
+        <form name="f1" action = "/login/authentication.php" onsubmit = "return validation()" method = "POST">  
             <p>  
                 <label> UserName: </label>  
                 <input type = "text" id ="user" name  = "user" />  
